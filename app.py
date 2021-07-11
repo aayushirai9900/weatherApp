@@ -38,12 +38,10 @@ def index():
                err_msg='already exist'
 
     cities=City.query.all()
-    #api='d650ef87a375d8e58c05fc7f5a17b3f2'
-    #url='http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid={}'
+    
     weather_data=[]
     for city in cities:
-        #api='d650ef87a375d8e58c05fc7f5a17b3f2'
-        #url='http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid={}'
+        
         rn=requests.get(url.format(city.name,api)).json()
         weather={
             'city':city.name,
